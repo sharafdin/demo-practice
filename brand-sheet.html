@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dugsiiye Labs — Brand Sheet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: 250 250 249;
+    --surface: 255 255 255;
+    --surface2: 243 244 242;
+    --ink: 12 12 11;
+    --line: 12 12 11;
+    --mint: #3acc69;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Manrope', system-ui, sans-serif;
+    background: rgb(var(--bg));
+    color: rgb(var(--ink));
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
+  }
+  .display { font-family: 'Space Grotesk', system-ui, sans-serif; }
+  ::selection { background: var(--mint); color: #0a0a0a; }
+
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 72px 40px 120px; }
+
+  /* header */
+  header { display: flex; align-items: flex-end; justify-content: space-between; gap: 32px; padding-bottom: 40px; border-bottom: 1px solid rgb(var(--line) / .12); flex-wrap: wrap; }
+  .logo { color: rgb(var(--ink)); }
+  .logo svg { display: block; height: 56px; width: auto; }
+  .eyebrow { font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: rgb(var(--ink) / .5); font-weight: 600; }
+  header .meta { text-align: right; }
+  header h1 { font-size: 15px; font-weight: 600; margin-top: 6px; }
+  header .meta p { font-size: 13px; color: rgb(var(--ink) / .5); }
+
+  /* sections */
+  section { margin-top: 72px; }
+  .sec-head { display: flex; align-items: baseline; gap: 16px; margin-bottom: 28px; }
+  .sec-num { font-family: 'Space Grotesk'; font-size: 13px; color: var(--mint); font-weight: 600; }
+  .sec-title { font-family: 'Space Grotesk'; font-size: 26px; font-weight: 600; letter-spacing: -.01em; }
+  .sec-desc { font-size: 14px; color: rgb(var(--ink) / .5); margin-left: auto; max-width: 320px; text-align: right; }
+
+  /* type specimens */
+  .type-card { background: rgb(var(--surface)); border: 1px solid rgb(var(--line) / .1); border-radius: 24px; padding: 36px 40px; margin-bottom: 20px; }
+  .type-label { display: flex; justify-content: space-between; align-items: baseline; font-size: 13px; color: rgb(var(--ink) / .5); margin-bottom: 20px; }
+  .type-label strong { color: rgb(var(--ink)); font-weight: 600; }
+  .type-label .tag { font-family: 'Space Grotesk'; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; background: rgb(var(--ink) / .06); padding: 4px 10px; border-radius: 999px; }
+  .specimen-xl { font-size: 64px; line-height: 1.02; letter-spacing: -.03em; font-weight: 600; }
+  .specimen-lg { font-size: 30px; line-height: 1.2; letter-spacing: -.01em; }
+  .weights { display: flex; gap: 28px; flex-wrap: wrap; margin-top: 24px; padding-top: 22px; border-top: 1px solid rgb(var(--line) / .08); }
+  .weights span { font-size: 20px; }
+  .weights small { display: block; font-family: 'Space Grotesk'; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; color: rgb(var(--ink) / .4); margin-top: 4px; font-weight: 500; }
+  .glyphs { font-size: 22px; letter-spacing: .04em; color: rgb(var(--ink) / .8); margin-top: 20px; }
+
+  /* colors */
+  .swatch-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .swatch { border-radius: 18px; overflow: hidden; border: 1px solid rgb(var(--line) / .1); }
+  .swatch .chip { height: 96px; }
+  .swatch .info { padding: 14px 16px; background: rgb(var(--surface)); }
+  .swatch .name { font-weight: 600; font-size: 14px; }
+  .swatch .hex { font-family: 'Space Grotesk'; font-size: 12px; color: rgb(var(--ink) / .5); margin-top: 2px; text-transform: uppercase; }
+
+  .sub { font-family: 'Space Grotesk'; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: rgb(var(--ink) / .45); font-weight: 600; margin: 36px 0 18px; }
+
+  /* token table */
+  .tokens { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .tok { display: flex; align-items: center; gap: 14px; background: rgb(var(--surface)); border: 1px solid rgb(var(--line) / .1); border-radius: 14px; padding: 12px 16px; }
+  .tok .dot { width: 30px; height: 30px; border-radius: 8px; border: 1px solid rgb(var(--line) / .14); flex: none; }
+  .tok .tk { font-family: 'Space Grotesk'; font-size: 13px; font-weight: 600; }
+  .tok .vl { font-family: 'Space Grotesk'; font-size: 12px; color: rgb(var(--ink) / .45); margin-left: auto; }
+
+  /* placeholder + misc */
+  .demo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .ph { aspect-ratio: 16/10; border-radius: 18px; border: 1px solid rgb(var(--line) / .1);
+    background-color: rgb(var(--surface2));
+    background-image: repeating-linear-gradient(135deg, rgb(var(--ink) / .06) 0 10px, transparent 10px 20px);
+    display: flex; align-items: flex-end; padding: 16px; }
+  .ph code { font-family: 'Space Grotesk'; font-size: 12px; color: rgb(var(--ink) / .5); background: rgb(var(--surface) / .8); padding: 4px 9px; border-radius: 8px; }
+  .misc-card { background: rgb(var(--surface)); border: 1px solid rgb(var(--line) / .1); border-radius: 18px; padding: 24px; }
+  .misc-card h4 { font-family: 'Space Grotesk'; font-size: 15px; margin-bottom: 14px; }
+  .btn-row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+  .btn { font-family: 'Manrope'; font-weight: 600; font-size: 14px; padding: 12px 22px; border-radius: 999px; border: none; cursor: pointer; }
+  .btn-mint { background: var(--mint); color: #0a0a0a; }
+  .btn-ink { background: rgb(var(--ink)); color: rgb(var(--bg)); }
+  .btn-ghost { background: transparent; border: 1px solid rgb(var(--line) / .2); color: rgb(var(--ink)); }
+  .pill { font-size: 12px; font-weight: 600; padding: 6px 14px; border-radius: 999px; background: #E7FAEC; color: #1f9a48; }
+  .radii { display: flex; gap: 16px; align-items: flex-end; }
+  .radii div { background: rgb(var(--surface2)); border: 1px solid rgb(var(--line) / .12); width: 64px; height: 64px; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 6px; font-family: 'Space Grotesk'; font-size: 10px; color: rgb(var(--ink) / .5); }
+  footer { margin-top: 90px; padding-top: 28px; border-top: 1px solid rgb(var(--line) / .12); font-size: 13px; color: rgb(var(--ink) / .45); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  @media (max-width: 720px) {
+    .swatch-grid { grid-template-columns: repeat(2, 1fr); }
+    .tokens, .demo-grid { grid-template-columns: 1fr; }
+    .specimen-xl { font-size: 44px; }
+    .sec-desc { display: none; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div>
+      <p class="eyebrow">Brand &amp; Design System</p>
+      <div class="logo" style="margin-top:18px;" id="logo-slot"></div>
+    </div>
+    <div class="meta">
+      <h1>Dugsiiye Labs</h1>
+      <p>Reference sheet · v1</p>
+    </div>
+  </header>
+
+  <!-- TYPOGRAPHY -->
+  <section>
+    <div class="sec-head">
+      <span class="sec-num">01</span>
+      <span class="sec-title">Typography</span>
+      <span class="sec-desc">Two families from Google Fonts. Space Grotesk sets headlines; Manrope carries everything else.</span>
+    </div>
+
+    <div class="type-card">
+      <div class="type-label"><span><strong>Space Grotesk</strong> · Display</span><span class="tag">.display</span></div>
+      <div class="display specimen-xl">Learn. Build. Ship.</div>
+      <div class="weights display">
+        <span style="font-weight:400">Aa<small>Regular 400</small></span>
+        <span style="font-weight:500">Aa<small>Medium 500</small></span>
+        <span style="font-weight:600">Aa<small>Semibold 600</small></span>
+        <span style="font-weight:700">Aa<small>Bold 700</small></span>
+      </div>
+      <div class="display glyphs">ABCDEFGHIJKLM &nbsp; abcdefg &nbsp; 0123456789 &nbsp; &amp;@#%</div>
+    </div>
+
+    <div class="type-card">
+      <div class="type-label"><span><strong>Manrope</strong> · Body &amp; UI</span><span class="tag">body</span></div>
+      <p class="specimen-lg">The quick brown fox jumps over the lazy dog while building the next generation of learning tools.</p>
+      <div class="weights">
+        <span style="font-weight:400">Aa<small>Regular 400</small></span>
+        <span style="font-weight:500">Aa<small>Medium 500</small></span>
+        <span style="font-weight:600">Aa<small>Semibold 600</small></span>
+        <span style="font-weight:700">Aa<small>Bold 700</small></span>
+        <span style="font-weight:800">Aa<small>Extra 800</small></span>
+      </div>
+      <div class="glyphs">ABCDEFGHIJKLM &nbsp; abcdefg &nbsp; 0123456789 &nbsp; &amp;@#%</div>
+    </div>
+  </section>
+
+  <!-- COLOR -->
+  <section>
+    <div class="sec-head">
+      <span class="sec-num">02</span>
+      <span class="sec-title">Color</span>
+      <span class="sec-desc">Mint is the single accent. Near-black ink and paper carry the rest, with a soft mint for highlights.</span>
+    </div>
+
+    <p class="sub">Core palette</p>
+    <div class="swatch-grid">
+      <div class="swatch"><div class="chip" style="background:#3acc69"></div><div class="info"><div class="name">Mint</div><div class="hex">#3acc69</div></div></div>
+      <div class="swatch"><div class="chip" style="background:#2fb95a"></div><div class="info"><div class="name">Mint 600</div><div class="hex">#2fb95a</div></div></div>
+      <div class="swatch"><div class="chip" style="background:#1f9a48"></div><div class="info"><div class="name">Mint 700</div><div class="hex">#1f9a48</div></div></div>
+      <div class="swatch"><div class="chip" style="background:#E7FAEC"></div><div class="info"><div class="name">Mint Soft</div><div class="hex">#E7FAEC</div></div></div>
+      <div class="swatch"><div class="chip" style="background:#121212"></div><div class="info"><div class="name">Navy / Ink</div><div class="hex">#121212</div></div></div>
+      <div class="swatch"><div class="chip" style="background:#0a0a0a"></div><div class="info"><div class="name">Navy Deep</div><div class="hex">#0a0a0a</div></div></div>
+      <div class="swatch"><div class="chip" style="background:#1e1e1e"></div><div class="info"><div class="name">Navy 700</div><div class="hex">#1e1e1e</div></div></div>
+      <div class="swatch"><div class="chip" style="background:#F6F8F8;border-bottom:1px solid rgba(0,0,0,.06)"></div><div class="info"><div class="name">Paper</div><div class="hex">#F6F8F8</div></div></div>
+    </div>
+
+    <p class="sub">Semantic tokens — light / dark</p>
+    <div class="tokens">
+      <div class="tok"><span class="dot" style="background:rgb(250 250 249)"></span><span class="tk">--bg</span><span class="vl">250 250 249 → 10 11 10</span></div>
+      <div class="tok"><span class="dot" style="background:rgb(255 255 255)"></span><span class="tk">--surface</span><span class="vl">255 255 255 → 18 20 18</span></div>
+      <div class="tok"><span class="dot" style="background:rgb(243 244 242)"></span><span class="tk">--surface2</span><span class="vl">243 244 242 → 14 16 14</span></div>
+      <div class="tok"><span class="dot" style="background:rgb(12 12 11)"></span><span class="tk">--ink</span><span class="vl">12 12 11 → 238 240 237</span></div>
+      <div class="tok"><span class="dot" style="background:rgb(12 12 11 / .15)"></span><span class="tk">--line</span><span class="vl">12 12 11 → 238 240 237</span></div>
+      <div class="tok"><span class="dot" style="background:rgb(12 12 11 / .1)"></span><span class="tk">--grid</span><span class="vl">12 12 11 → 238 240 237</span></div>
+    </div>
+  </section>
+
+  <!-- COMPONENTS -->
+  <section>
+    <div class="sec-head">
+      <span class="sec-num">03</span>
+      <span class="sec-title">Elements</span>
+      <span class="sec-desc">Pill buttons, rounded surfaces, striped image placeholders, mint selection.</span>
+    </div>
+
+    <div class="demo-grid">
+      <div class="misc-card">
+        <h4>Buttons &amp; pills</h4>
+        <div class="btn-row">
+          <button class="btn btn-mint">Get started</button>
+          <button class="btn btn-ink">Sign in</button>
+          <button class="btn btn-ghost">Learn more</button>
+          <span class="pill">New</span>
+        </div>
+      </div>
+      <div class="misc-card">
+        <h4>Radius scale</h4>
+        <div class="radii">
+          <div style="border-radius:8px">8</div>
+          <div style="border-radius:18px">18</div>
+          <div style="border-radius:24px">24</div>
+          <div style="border-radius:32px">4xl</div>
+        </div>
+      </div>
+    </div>
+
+    <p class="sub">Image placeholder</p>
+    <div class="demo-grid">
+      <div class="ph"><code>course thumbnail</code></div>
+      <div class="ph"><code>instructor photo</code></div>
+    </div>
+  </section>
+
+  <footer>
+    <span>Dugsiiye Labs — Brand Sheet</span>
+    <span class="display">Space Grotesk · Manrope · #3acc69</span>
+  </footer>
+
+</div>
+
+<script>
+  // inline the logo so it inherits ink color
+  fetch('logo.svg').then(r => r.text()).then(svg => {
+    document.getElementById('logo-slot').innerHTML = svg;
+    const el = document.querySelector('#logo-slot svg');
+    if (el) { el.setAttribute('fill', 'currentColor'); el.querySelectorAll('path').forEach(p => { if(!p.getAttribute('fill')) p.setAttribute('fill','currentColor'); }); }
+  }).catch(() => { document.getElementById('logo-slot').innerHTML = '<span class="display" style="font-size:30px;font-weight:700">Dugsiiye Labs</span>'; });
+</script>
+</body>
+</html>
