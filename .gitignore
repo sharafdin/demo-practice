@@ -3,3 +3,5 @@
 
 # ignore test file
 test
+
+secret.env
